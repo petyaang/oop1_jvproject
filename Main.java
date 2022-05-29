@@ -1,19 +1,5 @@
 package bg.tu_varna.sit;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.css.Rect;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -21,6 +7,7 @@ public class Main {
     public static Shapes shapeList=new Shapes();
     public static FileCommands fc=new FileCommands();
     public static boolean flagOpenedFile=false;
+    public static String path="shapes.svg";
 
     public static void main(String[] args) {
 
@@ -31,25 +18,29 @@ public class Main {
             int ch;
             Scanner input = new Scanner(System.in);
             do{
-                System.out.println("------MENU------ \n\n");
+                System.out.println("--------MENU-------- \n\n");
                 System.out.println("Please select an option:\n");
-                System.out.println("1. Open shapes.svg\n" +
-                        "2. Create shape\n" +
-                        "3. Print shapes\n" +
-                        "4. Erase shape\n" +
-                        "5. Translate shape(s)\n" +
-                        "6. Find shapes in a region\n" +
-                        "7. Close file\n" +
-                        "8. Save changes to file\n" +
-                        "9. Save as\n" +
-                        "10. Help\n" +
-                        "11. Exit\n");
+                System.out.println("1. Open shapes.svg");
+                System.out.println("2. Create shape");
+                System.out.println("3. Print shapes");
+                System.out.println("4. Erase shape");
+                System.out.println("5. Translate shape(s)");
+                System.out.println("6. Find shapes in a region");
+                if(flagOpenedFile){
+                    System.out.println("7. Close file");
+                    System.out.println("8. Save changes to file");
+                    System.out.println("9. Save as");
+                }
+                System.out.println("10. Help");
+                System.out.println("11. Exit\n");
                 System.out.println("Enter your choice:");
                 ch = input.nextInt();
                 switch (ch) {
                     case 1:
-                        flagOpenedFile=fc.openFile("shapes.svg");
-                        //fc.loadFile();
+                        if(!flagOpenedFile) {
+                            flagOpenedFile = fc.openFile(path);
+                        }
+                        else System.out.println("The file is already opened.");
                         break;
 
                     case 2:
@@ -58,7 +49,6 @@ public class Main {
                         break;
 
                     case 3:
-                        //shapeList.addShapesFromFile();
                         System.out.println(shapeList.printShapes());
                         break;
 
@@ -80,17 +70,25 @@ public class Main {
                             flagOpenedFile=false;
                         }
                         else
-                            System.out.println("Shapes.svg is already closed.");
-
-                        //fc.closeFile();
+                            System.out.println("The file is already closed.");
                         break;
 
                     case 8:
-
+                        if(flagOpenedFile) {
+                            fc.saveFile(path);
+                        }
+                        else
+                            System.out.println("You can't save an unopened file.");
                         break;
 
                     case 9:
-
+                        if(flagOpenedFile) {
+                            Scanner scanner = new Scanner(System.in);
+                            String newPath = scanner.next();
+                            fc.saveFile(newPath);
+                        }
+                        else
+                            System.out.println("No permission to save a new file.");
                         break;
 
                     case 10:

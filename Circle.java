@@ -14,10 +14,6 @@ public class Circle  extends BasicShape{
         return r;
     }
 
-    public void setR(int r) {
-        this.r = r;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
