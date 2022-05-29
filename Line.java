@@ -18,25 +18,14 @@ public class Line  extends BasicShape{
         return x1;
     }
 
-    public void setX1(int x1) {
-        this.x1 = x1;
-    }
-
     public int getY1() {
         return y1;
-    }
-
-    public void setY1(int y1) {
-        this.y1 = y1;
     }
 
     public int getStrokeWidth() {
         return strokeWidth;
     }
 
-    public void setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = strokeWidth;
-    }
 
     @Override
     public boolean equals(Object o) {

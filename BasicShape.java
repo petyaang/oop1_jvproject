@@ -18,10 +18,6 @@ public abstract class BasicShape {
         return shapeName;
     }
 
-    public void setShapeName(String shapeName) {
-        this.shapeName = shapeName;
-    }
-
     public int getX() {
         return x;
     }
@@ -40,10 +36,6 @@ public abstract class BasicShape {
 
     public String getFill() {
         return fill;
-    }
-
-    public void setFill(String fill) {
-        this.fill = fill;
     }
 
     @Override
