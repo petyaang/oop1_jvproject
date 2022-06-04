@@ -83,7 +83,6 @@ public class FileCommands {
 
     public void saveFile(String path){
         try {
-            File newFile = new File(path);
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder build = factory.newDocumentBuilder();
             Document doc = build.newDocument();

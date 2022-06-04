@@ -7,7 +7,7 @@ public class Main {
     public static Shapes shapeList=new Shapes();
     public static FileCommands fc=new FileCommands();
     public static boolean flagOpenedFile=false;
-    public static String path="shapes.svg";
+    public static String path="C:\\Users\\Petya\\IdeaProjects\\oop1_project\\shapes.svg";
 
     public static void main(String[] args) {
 
@@ -19,20 +19,18 @@ public class Main {
             Scanner input = new Scanner(System.in);
             do{
                 System.out.println("--------MENU-------- \n\n");
-                System.out.println("Please select an option:\n");
-                System.out.println("1. Open shapes.svg");
-                System.out.println("2. Create shape");
-                System.out.println("3. Print shapes");
-                System.out.println("4. Erase shape");
-                System.out.println("5. Translate shape(s)");
-                System.out.println("6. Find shapes in a region");
-                if(flagOpenedFile){
-                    System.out.println("7. Close file");
-                    System.out.println("8. Save changes to file");
-                    System.out.println("9. Save as");
-                }
-                System.out.println("10. Help");
-                System.out.println("11. Exit\n");
+                System.out.println("Please select an option:\n" +
+                        "1. Open shapes.svg\n" +
+                        "2. Create shape\n" +
+                        "3. Print shapes\n" +
+                        "4. Erase shape\n" +
+                        "5. Translate shape(s)\n" +
+                        "6. Find shapes in a region\n" +
+                        "7. Close file\n" +
+                        "8. Save changes to file\n" +
+                        "9. Save as\n" +
+                        "10. Help\n" +
+                        "11. Exit\n");
                 System.out.println("Enter your choice:");
                 ch = input.nextInt();
                 switch (ch) {
@@ -98,7 +96,7 @@ public class Main {
                                 "save - saves the currently open file\n" +
                                 "saveas <file> - saves the currently open file in <file>\n" +
                                 "help - prints this information\n" +
-                                "exit - exists the program \n";
+                                "exit - exits the program \n";
                         System.out.println(help);
                         break;
 
