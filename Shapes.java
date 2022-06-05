@@ -78,16 +78,14 @@ public class Shapes {
             String name = null;
             boolean flag = false;
             for (BasicShape current : shapes) {
-                if (num == shapes.indexOf(current)) {
+                if (num == shapes.indexOf(current) + 1) {
                     name = current.getShapeName();
                     flag = true;
                 }
             }
-            shapes.remove(num);
+            shapes.remove(num-1);
             if (flag)
                 System.out.println("Erased a " + name + " (" + num + ")");
-            else
-                System.out.println("There is no shape (" + num + ")");
 
             Main.menu();
         } catch(IndexOutOfBoundsException e){
@@ -128,7 +126,7 @@ public class Shapes {
             int y=0;
             boolean flag=false;
             for(BasicShape current:shapes){
-                if(num==shapes.indexOf(current)) {
+                if(num==shapes.indexOf(current) + 1) {
                     x = current.getX() + h;
                     current.setX(x);
                     y = current.getY() + v;
