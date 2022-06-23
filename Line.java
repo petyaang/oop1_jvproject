@@ -1,8 +1,8 @@
-package bg.tu_varna.sit;
+package shapes;
 
 import java.util.Objects;
 
-public class Line  extends BasicShape{
+public class Line extends BasicShape {
     private int x1;
     private int y1;
     private int strokeWidth;
@@ -45,3 +45,4 @@ public class Line  extends BasicShape{
         return super.toString() + x1 + " " + y1 + " " + super.getFill() + " " + strokeWidth;
     }
 }
+

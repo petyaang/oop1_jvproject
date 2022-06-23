@@ -1,4 +1,4 @@
-package bg.tu_varna.sit;
+package exception;
 
 public class UnknownShapeException extends Exception{
     public UnknownShapeException(String message) {
