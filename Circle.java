@@ -1,8 +1,8 @@
-package bg.tu_varna.sit;
+package shapes;
 
 import java.util.Objects;
 
-public class Circle  extends BasicShape{
+public class Circle  extends BasicShape {
     private int r;
 
     public Circle(String shapeName, int x, int y, String fill, int r) {

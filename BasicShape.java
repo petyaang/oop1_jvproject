@@ -1,4 +1,4 @@
-package bg.tu_varna.sit;
+package shapes;
 
 public abstract class BasicShape {
     private String shapeName;
@@ -43,3 +43,4 @@ public abstract class BasicShape {
         return shapeName + " " + x + " " + y + " ";
     }
 }
+

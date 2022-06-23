@@ -1,8 +1,8 @@
-package bg.tu_varna.sit;
+package shapes;
 
 import java.util.Objects;
 
-public class Rectangle extends BasicShape{
+public class Rectangle extends BasicShape {
     private int width;
     private int height;
 
@@ -39,3 +39,4 @@ public class Rectangle extends BasicShape{
         return super.toString() + width + " " + height + " " + super.getFill();
     }
 }
+
